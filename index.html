@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Eldritch Trail</title>
+    <link rel="stylesheet" href="css/style.css?v=1">
+</head>
+<body>
+    <!-- Title Screen -->
+    <div id="title-screen" class="screen active">
+        <div class="title-content">
+            <h1 class="game-title">ELDRITCH TRAIL</h1>
+            <p class="subtitle">Danvers, Massachusetts — 1927</p>
+            <button id="btn-start" class="menu-btn">Begin Journey</button>
+        </div>
+    </div>
+
+    <!-- Character Selection -->
+    <div id="character-screen" class="screen">
+        <h2>Choose Your Investigator</h2>
+        <div id="character-list" class="character-grid"></div>
+        <button id="btn-back-title" class="menu-btn secondary">Back</button>
+    </div>
+
+    <!-- Main Game Screen -->
+    <div id="game-screen" class="screen">
+        <div id="scene-container">
+            <div id="scene-background"></div>
+            <div id="hotspots-layer"></div>
+            <div id="location-name"></div>
+        </div>
+        
+        <div id="status-bar">
+            <div class="resource" id="sanity-display">
+                <span class="resource-icon">👁️</span>
+                <div class="sanity-bar"><div class="sanity-fill"></div></div>
+            </div>
+            <div class="resource">
+                <span class="resource-icon">🎒</span>
+                <span id="supplies-count">10</span>
+            </div>
+            <div class="resource">
+                <span class="resource-icon">⛽</span>
+                <span id="fuel-count">5</span>
+            </div>
+            <div class="resource pursuit" id="pursuit-display">
+                <span class="resource-icon">👤</span>
+                <span id="pursuit-count">0</span>
+            </div>
+        </div>
+
+        <div id="dialogue-box">
+            <div id="dialogue-text"></div>
+        </div>
+
+        <div id="action-buttons">
+            <button class="action-btn" id="btn-travel">🚗 DRIVE</button>
+            <button class="action-btn" id="btn-search">🔍 SEARCH</button>
+            <button class="action-btn" id="btn-rest">😴 REST</button>
+            <button class="action-btn" id="btn-party">👥 PARTY</button>
+        </div>
+    </div>
+
+    <!-- Event Overlay -->
+    <div id="event-overlay" class="overlay">
+        <div class="overlay-content">
+            <h3 id="event-title"></h3>
+            <p id="event-text"></p>
+            <div id="event-choices"></div>
+        </div>
+    </div>
+
+    <!-- Party Overlay -->
+    <div id="party-overlay" class="overlay">
+        <div class="overlay-content">
+            <h3>Your Party</h3>
+            <div id="party-list"></div>
+            <button class="menu-btn" id="btn-close-party">Close</button>
+        </div>
+    </div>
+
+    <!-- Search Result Overlay -->
+    <div id="search-overlay" class="overlay">
+        <div class="overlay-content">
+            <h3 id="search-title">Searching...</h3>
+            <p id="search-text"></p>
+            <button class="menu-btn" id="btn-close-search">Continue</button>
+        </div>
+    </div>
+
+    <!-- Game Over Screen -->
+    <div id="gameover-screen" class="screen">
+        <div class="gameover-content">
+            <h2 id="gameover-title">THE END</h2>
+            <p id="gameover-text"></p>
+            <button class="menu-btn" id="btn-restart">Try Again</button>
+        </div>
+    </div>
+
+    <!-- Victory Screen -->
+    <div id="victory-screen" class="screen">
+        <div class="victory-content">
+            <h2>ESCAPE!</h2>
+            <p id="victory-text">You have escaped to Maine. The horrors of Danvers fade behind you... but some things cannot be unseen.</p>
+            <div id="final-stats"></div>
+            <button class="menu-btn" id="btn-play-again">Play Again</button>
+        </div>
+    </div>
+
+    <script src="js/engine/state.js?v=1"></script>
+    <script src="js/engine/dialogue.js?v=1"></script>
+    <script src="js/engine/events.js?v=1"></script>
+    <script src="js/engine/scene.js?v=1"></script>
+    <script src="js/data/characters.js?v=1"></script>
+    <script src="js/data/locations.js?v=1"></script>
+    <script src="js/data/events.js?v=1"></script>
+    <script src="js/game.js?v=1"></script>
+</body>
+</html>
